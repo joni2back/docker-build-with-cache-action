@@ -49,7 +49,7 @@ build_image() {
   # create param to use (multiple) --cache-from options
   if [ "$max_stage" ]; then
     cache_from=$(eval "echo --cache-from=$(_get_full_image_name)-stages:{1..$max_stage}")
-    echo "Use cache: $cache_from"
+    echo "Use cache: ${cache_from}"
   fi
 
   # build image using cache
